@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * _getline - reads an entire line from a file descriptor
+ * getline_func - reads an entire line from a file descriptor
  * @fd: the file descriptor to read from
  * Return: the line read from the file descriptor
  */
 
-char *_getline(const int fd)
+char *getline_func(const int fd)
 {
 static char buffer[READ_SIZE];
 static ssize_t len;

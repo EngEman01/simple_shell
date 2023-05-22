@@ -18,6 +18,8 @@ print_environment(): Prints the current environment variables by iterating throu
 
 handle_exit(): Handles the built-in exit command, which terminates the shell.
 
+getline_fun(): This function uses a buffer to read many characters at once and calls the read system call as few times as possible.
+
 Usage
 The functions listed above are used in the shell code to provide basic shell functionality. The main function is the entry point of the program and controls the overall flow of the shell. The print_prompt function displays the shell prompt, and the read_command function reads user input.
 

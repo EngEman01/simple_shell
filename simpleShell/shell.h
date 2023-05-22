@@ -21,6 +21,6 @@ void parse_cmd(char *cmd, char **args);
 char *search_path(char *cmd);
 void execute_command(char **args);
 void print_environment(void);
-char *_getline(const int fd);
+char *getline_func(const int fd);
 
 #endif

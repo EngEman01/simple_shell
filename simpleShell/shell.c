@@ -14,7 +14,7 @@ while (should_run)
 printf("($) ");
 fflush(stdout);
 
-cmd = _getline(STDIN_FILENO);
+cmd = getline_func(STDIN_FILENO);
 if (cmd == NULL)
 {
 printf("\n");
