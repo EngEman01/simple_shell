@@ -8,7 +8,8 @@
 void execute_command(char **args)
 {
 char *full_path;
-if (strchr(args[0], '/') != NULL)
+
+if(strchr(args[0],'/') != NULL)
 {
 full_path = strdup(args[0]);
 }
