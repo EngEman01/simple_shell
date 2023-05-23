@@ -11,7 +11,7 @@ char *cmd;
 
 while (should_run)
 {
-printf("($) ");
+printf("$ ");
 fflush(stdout);
 
 cmd = getline_func(STDIN_FILENO);
