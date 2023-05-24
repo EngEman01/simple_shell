@@ -3,11 +3,13 @@
 /**
  * execute_command - executes a command.
  * @args: The array of arguments for the command.
- * @program_name: print the error message with the program
+ * @prog_name: print the error message with the program
  * @env: pointer to an array of environment variables
+ * @line_num: the line number where the error occurred
+ * Return: void
  */
 
-void execute_command(char **args, char *program_name, char **env)
+void execute_command(char **args, char *prog_name, char **env, int line_num)
 {
 char *full_path;
 
@@ -19,13 +21,14 @@ else
 {
 full_path = search_path(args[0]);
 }
+
 if (full_path != NULL)
 {
 if (fork() == 0)
 {
 if (execve(full_path, args, env) == -1)
 {
-perror(program_name);
+error_message(prog_name,  args[0], "not found", line_num);
 exit(1);
 }
 }
@@ -37,6 +40,6 @@ free(full_path);
 }
 else
 {
-printf("%s: command not found\n", args[0]);
+error_message(prog_name,  args[0], "not found", line_num);
 }
 }

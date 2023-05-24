@@ -17,8 +17,9 @@
 
 void parse_cmd(char *cmd, char **args);
 char *search_path(char *cmd);
-void execute_command(char **args, char *program_name, char **env);
+void execute_command(char **args, char *prog_name, char **env, int line_num);
 void print_environment(char **env);
 char *getline_func(const int fd);
+void error_message(char *prog_name, char *command, char *err, int line_num);
 
 #endif

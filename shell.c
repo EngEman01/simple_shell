@@ -11,6 +11,7 @@ int main(int argc, char *argv[], char *env[])
 char *args[MAX_LINE / 2 + 1];
 int should_run = 1;
 char *cmd;
+int line_number = 1;
 (void)argc;
 while (should_run)
 {
@@ -34,9 +35,10 @@ print_environment(env);
 }
 else
 {
-execute_command(args, argv[0], env);
+execute_command(args, argv[0], env, line_number);
 }
 free(cmd);
+line_number++;
 }
 return (0);
 }
