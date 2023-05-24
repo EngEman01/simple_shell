@@ -13,6 +13,7 @@ int should_run = 1;
 char *cmd;
 int line_number = 1;
 (void)argc;
+signal(SIGINT, sigint_handler);
 while (should_run)
 {
 printf("$ ");
