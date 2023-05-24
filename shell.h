@@ -15,8 +15,6 @@
 #define MAX_LINE 80
 #define READ_SIZE 1024
 
-extern char **environ;
-
 void parse_cmd(char *cmd, char **args);
 char *search_path(char *cmd);
 void execute_command(char **args, char *program_name, char **env);

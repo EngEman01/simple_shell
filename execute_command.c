@@ -4,6 +4,7 @@
  * execute_command - executes a command.
  * @args: The array of arguments for the command.
  * @program_name: print the error message with the program
+ * @env: pointer to an array of environment variables
  */
 
 void execute_command(char **args, char *program_name, char **env)
@@ -18,7 +19,6 @@ else
 {
 full_path = search_path(args[0]);
 }
-
 if (full_path != NULL)
 {
 if (fork() == 0)
