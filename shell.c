@@ -3,11 +3,13 @@
  * main - carries out the read, execute then print output loop
  * Return: 0
  */
-int main(void)
+int main(int argc, char *argv[], char *env[])
 {
 char *args[MAX_LINE / 2 + 1];
 int should_run = 1;
 char *cmd;
+(void)argc;
+
 
 while (should_run)
 {
@@ -31,12 +33,15 @@ should_run = 0;
 }
 else if (strcmp(args[0], "env") == 0)
 {
-print_environment();
+print_environment(env);
 }
 else
 {
-execute_command(args);
+execute_command(args, argv[0], env);
 }
+
+free(cmd);
 }
-return (0);
+
+return 0;
 }

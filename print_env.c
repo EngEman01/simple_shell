@@ -4,9 +4,10 @@
  * print_environment - prints the environment variables.
  */
 
-void print_environment(void)
+void print_environment(char **env)
 {
-char **env = environ;
+extern char **environ;
+env = environ;
 
 while (*env != NULL)
 {

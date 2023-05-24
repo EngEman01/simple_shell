@@ -19,8 +19,8 @@ extern char **environ;
 
 void parse_cmd(char *cmd, char **args);
 char *search_path(char *cmd);
-void execute_command(char **args);
-void print_environment(void);
+void execute_command(char **args, char *program_name, char **env);
+void print_environment(char **env);
 char *getline_func(const int fd);
 
 #endif

@@ -3,9 +3,10 @@
 /**
  * execute_command - executes a command.
  * @args: The array of arguments for the command.
+ * @program_name: print the error message with the program
  */
 
-void execute_command(char **args)
+void execute_command(char **args, char *program_name, char **env)
 {
 char *full_path;
 
@@ -22,9 +23,9 @@ if (full_path != NULL)
 {
 if (fork() == 0)
 {
-if (execv(full_path, args) == -1)
+if (execve(full_path, args, env) == -1)
 {
-printf("%s: command not found\n", args[0]);
+perror(program_name);
 exit(1);
 }
 }
