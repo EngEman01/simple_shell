@@ -16,7 +16,7 @@
 #define READ_SIZE 1024
 
 
-void parse_cmd(char *cmd, char **args);
+void parse_cmd(const char *cmd, char **args);
 char *search_path(char *cmd);
 void execute_command(char **args, char *prog_name, char **env, int line_num);
 void print_environment(char **env);

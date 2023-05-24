@@ -22,7 +22,7 @@ cmd = getline_func(STDIN_FILENO);
 if (cmd == NULL)
 {
 printf("\n");
-exit(STDOUT_FILENO);
+exit(0);
 }
 cmd[strcspn(cmd, "\n")] = '\0';
 if (strlen(cmd) == 0 || strspn(cmd, " \t\n") == strlen(cmd))
