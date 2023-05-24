@@ -29,7 +29,7 @@ if (fork() == 0)
 if (execve(full_path, args, env) == -1)
 {
 error_message(prog_name,  args[0], "not found", line_num);
-exit(1);
+exit(EXIT_SUCCESS);
 }
 }
 else

@@ -21,9 +21,14 @@ cmd = getline_func(STDIN_FILENO);
 if (cmd == NULL)
 {
 printf("\n");
-exit(0);
+exit(STDOUT_FILENO);
 }
 cmd[strcspn(cmd, "\n")] = '\0';
+if (strlen(cmd) == 0 || strspn(cmd, " \t\n") == strlen(cmd))
+{
+free(cmd);
+continue;
+}
 parse_cmd(cmd, args);
 if (strcmp(args[0], "exit") == 0)
 {
