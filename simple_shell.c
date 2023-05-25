@@ -35,6 +35,9 @@ int main(int count, char **vector, char *envirtor[])
 			continue;
 		if (checking(mycommand, myline))
 			continue;
+		if (strcmp(mycommand[0], "exit") == 0)
+		exit(0);
+
 		mypath = lookout_path();
 		mypaths = tokening(mypath);
 		mypathcommand = testing_path(mypaths, mycommand[0]);
