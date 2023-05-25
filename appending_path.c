@@ -10,8 +10,9 @@
 */
 char *appending_path(char *mypath, char *mycommand)
 {
-	char *buffer, string;
+	char *buffer;
 	size_t x = 0, y = 0;
+	int sum;
 
 	if (mycommand == 0)
 		mycommand = "";
@@ -19,8 +20,8 @@ char *appending_path(char *mypath, char *mycommand)
 	if (mypath == 0)
 		mypath = "";
 
-	string = (_stringlen(mypath) + _stringlen(mycommand) + 2);
-	buffer = malloc(sizeof(char) * string);
+	sum = (_stringlen(mypath) + _stringlen(mycommand) + 2);
+	buffer = malloc(sizeof(char) * sum);
 
 	if (!buffer)
 		return (NULL);
