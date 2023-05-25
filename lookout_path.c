@@ -13,10 +13,10 @@ while (*env)
 if (_stringncmp(*env, "PATH=", 5) == 0)
 {
 mypath = *env + 5;
-return mypath;
+return (mypath);
 }
 env++;
 }
 
-return NULL;
+return (NULL);
 }
